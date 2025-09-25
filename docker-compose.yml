@@ -3,14 +3,14 @@ version: '3.3'
 services:
   db:
     image: mysql:latest
-    container_name: iventory-db
+    container_name: inventory
     environment:
       MYSQL_ROOT_PASSWORD: 123
       MYSQL_DATABASE: inventory
       MYSQL_USER: user
       MYSQL_PASSWORD: 123
     volumes:
-      - iventory_db:/var/lib/mysql
+      - inventory_db:/var/lib/mysql
     networks:
       - mynet
 
@@ -26,7 +26,7 @@ services:
       - mynet
 
 volumes:
-  iventory_db:
+  inventory_db:
     
 networks:
   mynet:
