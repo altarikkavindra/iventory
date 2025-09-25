@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 
 // GET semua barang + kategori (JOIN)
 // READ: tampilkan semua transaksi
-app.get('/transaksi', (req, res) => {
+app.get('/barang', (req, res) => {
   db.query('SELECT * FROM inventory.barang', (err, results) => {
     if (err) return res.status(500).send(err);
     res.send(results);
