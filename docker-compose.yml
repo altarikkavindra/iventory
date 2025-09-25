@@ -1,0 +1,32 @@
+version:'3.3'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: iventory-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASES: iventori
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123
+    volumes:
+      - iventory-db:/var/lib/mysql
+    networks:
+      - mynet
+
+  app:
+    build: .
+    container_name: iventory-app
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "3002:3000"
+    netowrks:
+      - mynet
+
+  volumes:
+    - iventory_db:
+    
+  networks:
+    - mynet:
