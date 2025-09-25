@@ -6,7 +6,7 @@ services:
     container_name: iventory-db
     environment:
       MYSQL_ROOT_PASSWORD: 123
-      MYSQL_DATABASES: inventori
+      MYSQL_DATABASE: inventori
       MYSQL_USER: user
       MYSQL_PASSWORD: 123
     volumes:
