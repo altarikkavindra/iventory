@@ -11,7 +11,7 @@ const db = mysql.createConnection({
   host: 'db',
   user: 'user',
   password: '123',
-  database: 'inventori'
+  database: 'inventory'
 });
 
 // Retry koneksi
