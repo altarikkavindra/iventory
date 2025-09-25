@@ -44,4 +44,4 @@ jobs:
           cd /var/www/iventory
           git pull origin main
           docker-compose up -d --build
-          docker exec iventory-db mysql -u root -p123 -h127.0.0.1 -e "INSERT INTO barang (nama, stok, kategori_id) VALUES ('domains', 1000, 01);" inventori
+          docker exec iventory-db mysql -u root -p123 -h127.0.0.1 -e "INSERT INTO barang (nama, stok, kategori_id) VALUES ('domains', 1000, 01);" inventory
