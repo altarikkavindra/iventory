@@ -37,16 +37,12 @@ app.get('/', (req, res) => {
 });
 
 // GET semua barang + kategori (JOIN)
-app.get('/barang', (req, res) => {
-  db.query(
-    `SELECT b.id, b.nama, b.stok, k.nama AS kategori
-     FROM barang b
-     LEFT JOIN kategori k ON b.kategori_id = k.id`,
-    (err, results) => {
-      if (err) return res.status(500).send(err);
-      res.send(results);
-    }
-  );
+// READ: tampilkan semua transaksi
+app.get('/transaksi', (req, res) => {
+  db.query('SELECT * FROM inventory.barang', (err, results) => {
+    if (err) return res.status(500).send(err);
+    res.send(results);
+  });
 });
 
 // POST tambah kategori
